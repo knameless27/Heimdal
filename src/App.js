@@ -1,15 +1,14 @@
 import './App.css';
-import navbar from './components/navbar';
-import consulta from './components/consulta';
-import login from './components/login';
+import Navbar from './components/navbar';
+import Consulta from './components/consulta';
+import Titulo from './components/login';
 
 function App() {
   return (
     <div>
-      {navbar()}
-      {login()}
-      {consulta()}
-      <h1>XD</h1>
+      <Navbar />
+      <Titulo />
+      <Consulta />
     </div>
   );
 }

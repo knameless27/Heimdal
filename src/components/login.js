@@ -1,15 +1,19 @@
-import axios from '../axios';
+import { Container, Row, Col } from 'react-bootstrap';
+import React from 'react';
 
-function login() {
-  // axios.reimprimir().then((res) => {
-    console.log('ou yea logiin')
-  // });
-
+function Titulo() {
   return (
-    <div>
-      <h1>ou yea login</h1>
-    </div>
+    <Container>
+      <br />
+      <Row>
+        <Col>
+          <h1 className="text-center">Bienvenido a HEIMDAL</h1>
+          <h3 className="text-center">¡Tu buscador de confianza!</h3>
+        </Col>
+      </Row>
+      <br />
+    </Container>
   );
 }
 
-export default login;
+export default Titulo;

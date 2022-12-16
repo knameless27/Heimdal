@@ -1,14 +1,9 @@
 import axios from "axios"
+const apiKey = 'api_key=RGAPI-a0d229c1-e88c-4637-baa0-b1480e315024';
 
-const generadas = () => {
+const nombre = (nombre) => {
   return new Promise((resolve, reject) => {
-    const token = localStorage.getItem('accessToken')
-    const headers = {
-      'Authorization': `Bearer ${token}`
-    }
-    axios.get(`${process.env.BASE_URL}/encomiendas_generadas`, {
-      headers: headers
-    })
+    axios.get(`https://la1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${nombre}?${apiKey}`)
       .then(resp => {
         resolve(resp.data)
       })
@@ -18,14 +13,11 @@ const generadas = () => {
   })
 }
 
-const anuladas = () => {
+const status = () => {
   return new Promise((resolve, reject) => {
-    const token = localStorage.getItem('accessToken')
-    const headers = {
-      'Authorization': `Bearer ${token}`
-    }
-    axios.get(`${process.env.BASE_URL}/encomiendas_anuladas`, {
-      headers: headers
+    axios.get(`/val/status/v1/platform-data`, {
+      api_key: apiKey,
+      Token: "3006c4d5-560c-4ea9-beb2-6a2415faa10d",
     })
       .then(resp => {
         resolve(resp.data)
@@ -92,9 +84,9 @@ const reimprimir = (data) => {
 
 
 export default {
-  generadas,
-  anuladas,
+  nombre,
   filtroEncomiendas,
   filtroPaged,
   reimprimir,
+  status,
 }
