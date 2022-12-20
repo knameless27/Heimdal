@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@fightmegg/riot-api": "0.0.8",
     "axios": "^1.2.1",
     "cra-template": "1.2.0",
+    "ddragon": "^3.5.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
